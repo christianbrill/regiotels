@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Owner App</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<!--<header>
+		<nav>Navbar</nav>
+	</header>-->
+
+	<main>
+		<section class="top-flex">
+			<div class="top-flex__box">
+				<h2>Today's Occupancy</h2>
+				<span class="top-flex__container"><span class="number">77</span>%</span>
+			</div>
+
+			<div class="top-flex__box">
+				<h2>Today's Price</h2>
+				<span class="top-flex__container">€<span class="number">145</span></span>
+			</div>
+		</section>
+
+		<section class="reserve">
+			<h2>Reservations Made</h2>
+			<div class="reserve__days">
+				<a href=""><div class="reserve__box">
+					<h2>Y-day</h2>
+					<span>15</span>
+				</div></a>
+				<a href=""><div class="reserve__box">
+					<h2>3 days ago</h2>
+					<span>25</span>
+				</div></a>
+				<a href=""><div class="reserve__box">
+					<h2>7 days ago</h2>
+					<span>50</span>
+				</div></a>
+				<a href=""><div class="reserve__box">
+					<h2>14 days ago</h2>
+					<span>85</span>
+				</div></a>
+				<a href=""><div class="reserve__box">
+					<h2>30 days ago</h2>
+					<span>115</span>
+				</div></a>
+			</div>
+		</section>
+
+		<section class="month">
+			<h2>Month</h2>
+			<div class="month__details">
+				<div>
+					<h2>Occupancy</h2>
+					<span><span class="month__occupancy">77</span>%</span>
+				</div>
+				<div>
+					<h2>Online Revenue</h2>
+					<span>€<span class="month__revenue">120.000</span></span>
+				</div>
+				<div>
+					<h2>Sell Price</h2>
+					<span>€<span class="month__price">140</span></span>
+				</div>
+			</div>
+			
+			<div id="calendar"></div>
+		</section>
+
+	</main>
+
+	<!--<footer>
+		Footer
+	</footer>-->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+	    $('#calendar').datepicker({
+	        inline: true,
+	        firstDay: 1,
+	        showOtherMonths: true,
+	        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+	    });
+
+	    $('.ui-state-default').on('click', function(event) {
+	    	event.preventDefault();
+
+	    	let day;
+	    	let month;
+	    	let year;
+
+	    	day = $(this).text();
+	    	month = $(this).parent().attr("data-month");
+	    	year = $(this).parent().attr("data-year");
+
+	    	console.log(day);
+	    	console.log(month);
+	    	console.log(year);
+	    });
+	</script>
+</body>
+</html>
